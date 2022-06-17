@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: dim_users
+    columns:
+      - name: user_id
+        tests: 
+          - unique
+          - not_null
+  - name: dim_user_orders
+  - name: fact_events  
+  - name: fact_orders
+  - name: fact_products
+  

@@ -1,0 +1,55 @@
+version: 2
+
+sources:
+
+  - name: greenery # name of the source (this can be named whatever you want, but should be descriptive.
+    schema: public # this is the schema our raw data lives in
+    database: dbt # this is the name of our database
+
+    tables:
+      - name: addresses
+        description: >
+          All addresses in our db. One record per address.
+        columns:
+          - name: address_id
+            tests: 
+              - unique
+              - not_null
+      - name: events
+        description: >
+          Events on the web page. One record per event (e.g., page_view, add_to_cart).
+        columns:
+          - name: event_id
+            tests:
+              - unique
+              - not_null
+      - name: order_items
+        description: >
+          One row for each item ordered within a single order.
+      - name: orders
+        description: >
+          One row for each order.
+        columns:
+          - name: order_id
+            tests:
+              - unique
+              - not_null
+      - name: products
+        description: >
+          One row for each product in greenery.
+        columns:
+          - name: product_id
+            tests: 
+              - unique
+              - not_null
+      - name: promos
+        description: >
+          One row for each promo greenery has run.
+      - name: users
+        description: >
+          One row for each user (visitor) to the greenery site.
+        columns:
+          - name: user_id
+            tests:
+              - unique
+              - not_null
