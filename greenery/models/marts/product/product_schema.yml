@@ -2,3 +2,6 @@ version: 2
 
 models:
   - name: fact_product_inventory
+  - name: fact_session_orders
+  - name: conversion_by_product_month
+  - name: promos_used_by_state

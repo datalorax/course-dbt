@@ -11,4 +11,5 @@ models:
   - name: fact_events  
   - name: fact_orders
   - name: fact_products
+  - name: int_products
   
